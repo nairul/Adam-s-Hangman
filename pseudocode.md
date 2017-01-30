@@ -20,11 +20,12 @@ Track scores across games (even if the page is reloaded)
 !![HTML]!!
 For blank spaces, use the underlines as div borders with text centered above them
 
+
 !![CSS]!!
 
 !![Javascript]!!
 
-Start as pole and ending as hangman after each error: (1) Head, 2) Body, 3) Left Arm, 4) Right Arm, 5) Left Leg, 6) Right Leg)
+Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 2) Body, 3) Left Arm, 4) Right Arm, 5) Left Leg, 6) Right Leg)
 
 <strike> each letter in alphabet after it has been guessed
 
