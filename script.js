@@ -1,15 +1,35 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+var correctGuessMade = false;
 //$(".alphabet").html(alphabet);
 
 $(".player .button").on("click", function(){
 	var p1input = $("#p1 .input").val();
 	var p2input = $("#p2 .input").val();
-  
-  	$(".fill #blank1").html(p2input);
-  	$(".fill #blank2").html(p2input);
-  	$(".fill #blank3").html(p2input);
-  	$(".fill #blank4").html(p2input);
 
+
+//matching	
+	if (p1input[0] == p2input){  
+  		$(".fill #blank0").html(p2input);
+  		correctGuessMade = true;
+  	}
+  	if (p1input[1] == p2input){  
+  		$(".fill #blank1").html(p2input);
+  		correctGuessMade = true;
+  	}
+  	if (p1input[2] == p2input){  
+  		$(".fill #blank2").html(p2input);
+  		correctGuessMade = true;
+  	}
+  	if (p1input[3] == p2input){  
+  		$(".fill #blank3").html(p2input);
+  		correctGuessMade = true;
+  	}
+  	//if (correctGuessMade) {console.log("no match!")}
+//body part (currently strikethroughs)
+	//else {$(".pole .head").css("text-decoration", "line-through");
+	//}
+
+//alphabet strikethroughs (TO REFACTOR USE A LOOP DUDE)
   	if (alphabet[0] == p2input){
 		$(".a").css("text-decoration", "line-through");
 	}
