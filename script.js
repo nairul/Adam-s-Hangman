@@ -2,34 +2,42 @@ var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 var correctGuessMade = false;
 //$(".alphabet").html(alphabet);
 
-$(".player .button").on("click", function(){
-	var p1input = $("#p1 .input").val();
-	var p2input = $("#p2 .input").val();
+$("#p2 .button").on("click", function(){
 
-
-//matching	
+var p1input = $("#p1 .input").val();
+var p2input = $("#p2 .input").val();	
+//Nayana recommends use nested if/else statements here...
 	if (p1input[0] == p2input){  
   		$(".fill #blank0").html(p2input);
   		correctGuessMade = true;
   	}
+
   	if (p1input[1] == p2input){  
   		$(".fill #blank1").html(p2input);
   		correctGuessMade = true;
   	}
+
   	if (p1input[2] == p2input){  
   		$(".fill #blank2").html(p2input);
   		correctGuessMade = true;
   	}
+
   	if (p1input[3] == p2input){  
   		$(".fill #blank3").html(p2input);
   		correctGuessMade = true;
   	}
-  	//if (correctGuessMade) {console.log("no match!")}
-//body part (currently strikethroughs)
-	//else {$(".pole .head").css("text-decoration", "line-through");
-	//}
+  	//WHY DID THIS NEED TO BE "==" ?
+  	if (correctGuessMade == false){
+  		console.log("false!");
+  		$(".head").css("text-decoration", "line-through");		
+  		
+  	}
+ 
+  //HERE'S THE javascript TO START HANGING THE MAN ONCE YOU FIGURE OUT WHERE TO PUT IT!	
+ //$(".pole .head").css("text-decoration," "line-through");
+  					
 
-//alphabet strikethroughs (TO REFACTOR USE A LOOP DUDE)
+//alphabet strikethroughs (TO REFACTOR USE A LOOP)
   	if (alphabet[0] == p2input){
 		$(".a").css("text-decoration", "line-through");
 	}
@@ -108,17 +116,5 @@ $(".player .button").on("click", function(){
 	if (alphabet[25] == p2input){
 		$(".z").css("text-decoration", "line-through");
 	}
-
-  
-  	//if (p1input[0] == p2input) {
-  	//	console.log("match!");
-  	//}
-  	//else {
-  	//console.log("no match!");
-  	//}
+	correctGuessMade = false;
 });
-
-
-//var chars = "overpopulation".split('');
-//console.log(chars);
-//console.log(chars[1]);
