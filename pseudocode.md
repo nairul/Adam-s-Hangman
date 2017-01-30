@@ -27,9 +27,12 @@ Center everything and learn flexbox again.
 
 !![Javascript]!!
 
-Take P1 Word and parse each letter. Display letters in blank spaces.
+Take P2 Guess and check if guess == any letters parsed from P1 Word
 
 Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 2) Body, 3) Left Arm, 4) Right Arm, 5) Left Leg, 6) Right Leg)
 
 <strike> each letter in alphabet after it has been guessed
+
+!![SMALL STEPS]!!
+Console.log "Match!" if P1 Word = P2 Guess
 
