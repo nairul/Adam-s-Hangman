@@ -33,6 +33,9 @@ Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 
 
 <strike> each letter in alphabet after it has been guessed
 
+
+
 !![SMALL STEPS]!!
-Console.log "Match!" if P1 Word = P2 Guess
+
+Make a button to strikethrough letters when one is inputted
 
