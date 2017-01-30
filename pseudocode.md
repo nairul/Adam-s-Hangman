@@ -23,7 +23,11 @@ For blank spaces, use the underlines as div borders with text centered above the
 
 !![CSS]!!
 
+Center everything and learn flexbox again.
+
 !![Javascript]!!
+
+Take P1 Word and parse each letter. Display letters in blank spaces.
 
 Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 2) Body, 3) Left Arm, 4) Right Arm, 5) Left Leg, 6) Right Leg)
 
