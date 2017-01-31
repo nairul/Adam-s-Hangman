@@ -8,7 +8,5 @@ Track scores across games (even if the page is reloaded)
 
 
 
--Add actual body parts
--Delete alphabet and have incorrect-letters-guessed show up beneath word area, in CAPS
--Add a "reset game" button
+-Have only unique incorrect answers make body parts
 -Make it look nice

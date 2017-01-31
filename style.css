@@ -8,21 +8,39 @@
 	display: inline-block;
 }
 
+.a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k, .l, .m, .n, .o, .p, .q, .r, .s, .t, .u, .v, .w, .x, .y, .z{
+	display: none;
+}
+
 .pole {
 	width: 100px;
 }
 
-.fill {
-	
-}
 .blank {
 	display: inline-block;
 	height: 20px;
 	width: 20px;
 	border-bottom: 1px solid black;
 	text-align: center;
+
 }
 
 .player {
 	display: inline-block;
+}
+
+.head, .leftarm, .body1, .rightarm, .body2, .leftleg, .rightleg{
+	display: none;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.fill {
+}
+
+/*.input {
+	text-transform:uppercase;
 }

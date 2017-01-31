@@ -8,11 +8,7 @@
 <body>
 	
 	<div class="container">
-		<h1>Adam's Hangman</h1>
-		
-		<div class="alphabet">
-			<span class="a">A</span> <span class="b">B</span> <span class="c">C</span> <span class="d">D</span> <span class="e">E</span> <span class="f">F</span> <span class="g">G</span> <span class="h">H</span> <span class="i">I</span> <span class="j">J</span> <span class="k">K</span> <span class="l">L</span> <span class="m">M</span> <span class="n">N</span> <span class="o">O</span> <span class="p">P</span> <span class="q">Q</span> <span class="r">R</span> <span class="s">S</span> <span class="t">T</span> <span class="u">U</span> <span class="v">V</span> <span class="w">W</span> <span class="x">X</span> <span class="y">Y</span> <span class="z">Z</span>
-		</div>
+  <h1>Adam's Hangman</h1>
 
 		<!--<div id="strike">
       		<input class="input" type="text" placeholder="Enter a letter" />
@@ -21,7 +17,7 @@
 		-->
 
 		<div class="pole">
-    <p>_____<br /> | &nbsp; &nbsp; &nbsp; &nbsp; |<br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="head">()</span> &nbsp;<br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="leftarm">/</span><span class="body1">|</span><span class="rightarm">\</span><br /> | &nbsp; &nbsp; &nbsp; &nbsp; <span class="body2">|</span><br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="leftleg">/</span> <span class="rightleg">\</span><br />|&nbsp;<br />|&nbsp;<br />|</p>
+    <p>_____<br /> | &nbsp; &nbsp; &nbsp; &nbsp; |<br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="head">()</span> &nbsp;<br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="leftarm">/</span><span class="body1">|</span><span class="rightarm">\</span><br /> | &nbsp; &nbsp; &nbsp; &nbsp; <span class="body2">|</span><br /> | &nbsp; &nbsp; &nbsp; &nbsp;<span class="leftleg">/</span> <span class="rightleg">\</span><br />|&nbsp;<br />|&nbsp;<br />|_</p>
 			<!--_______<br />
 			|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|<br />
 			|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="head">0</span><br />
@@ -32,23 +28,30 @@
       |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="rightleg">rightleg</span>
 		-->
     </div>
-
-		<div id="p1" class="player">
+    <div class="wrapper">
+		  <div id="p1" class="player">
       		<p style="color:red;">Player 1 Word</p>
-      		<input class="input" type="password" placeholder="Enter a word (case sensitive!)" />
-      		<input class="button" type="button" value="Enter" />
+      		<input class="input" type="password" placeholder="Enter a word" />
+      		<input class="button" type="button" value="New Game" />
     	</div>
 
     	<div id="p2" class="player">
       		<p style="color:blue;">Player 2 Guess</p>
-      		<input class="input" type="text" placeholder="Guess a letter (case sensitive!)" />
+      		<input class="input" type="text" placeholder="Guess a letter" />
       		<input class="button" type="button" value="Enter" />
     	</div>
-
-    	<div class="fill">
+    </div>
+      <br /
+>    	<div class="fill">
         <!--
     		<div id="blank0" class="blank"></div><div id="blank1" class="blank"></div><div id="blank2" class="blank"></div><div id="blank3" class="blank"></div> 
         -->
+      </div>
+      <br />
+      <div class="wrong_letters">
+      </div>
+      <div class="alphabet">
+      <span class="a">A</span> <span class="b">B</span> <span class="c">C</span> <span class="d">D</span> <span class="e">E</span> <span class="f">F</span> <span class="g">G</span> <span class="h">H</span> <span class="i">I</span> <span class="j">J</span> <span class="k">K</span> <span class="l">L</span> <span class="m">M</span> <span class="n">N</span> <span class="o">O</span> <span class="p">P</span> <span class="q">Q</span> <span class="r">R</span> <span class="s">S</span> <span class="t">T</span> <span class="u">U</span> <span class="v">V</span> <span class="w">W</span> <span class="x">X</span> <span class="y">Y</span> <span class="z">Z</span>
       </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="script.js"></script>
