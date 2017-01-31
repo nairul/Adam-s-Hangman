@@ -5,75 +5,61 @@ var p1inputEl = $("#p1 .input");
 var p2inputEl = $("#p2 .input");
 var gameNum = 0;
 
+$(".head").hide();
+$(".leftarm").hide();
+$(".body1").hide();
+$(".rightarm").hide();
+$(".body2").hide();
+$(".leftleg").hide();
+$(".rightleg").hide();
+
 $("#p1 .button").on("click", function(){
+	//Refresh Blanks on p1 button click
 	$(".fill").html("");
 		var p1input = p1inputEl.val();
+		//Add Blanks equal to string length of p1input
 		for (var i = 1; i <= p1input.length; i++){ 
 			$(".fill").append("<div class='blank'></div> ");
 		}
 	gameNum++;
-	
 });
 
 $("#p2 .button").on("click", function(){
 var p1input = p1inputEl.val();
 var p2input = p2inputEl.val();
-
-//HOW DO I refresh # of blanks when button is pressed??
-
-//Add Blanks equal to string length of p1input
-	
-
 //Fill Blanks With Correct Guess, and keep correctGuessMade = true
-	/*if 	(p1input[0] == p2input){  
-  		$(".fill .blank:first").html(p2input);
-  		correctGuessMade = true;
-  	}
-  	if 	(p1input[1] == p2input){  
-  		$(".fill .blank:nth-child(2)").html(p2input);
-  		correctGuessMade = true;
-  	}
-  	if 	(p1input[2] == p2input){  
-  		$(".fill .blank:nth-child(3)").html(p2input);
-  		correctGuessMade = true;
-  	}
-  	if 	(p1input[3] == p2input){  
-  		$(".fill .blank:nth-child(4)").html(p2input);
-  		correctGuessMade = true;
-  	}
-*/
   	for (var i = 0; i < p1input.length; i++){
   		if 	(p1input[i] == p2input){  
   		$(".fill .blank").eq(i).html(p2input);
   		correctGuessMade = true;
   		}
   	}
-
-
-  	//WHY DID THIS NEED TO BE "==" ?
+  	//Add Body Parts Based on value of incorrect guesses, and end game after more than 6 incorrect guesses
   	if 	(correctGuessMade == false){
-  		incorrect += 1;
+  		incorrect++;
   		}
-  	//Add Body Parts Based on value of incorrect guesses
   	if (incorrect == 1){
-		$(".head").css("text-decoration", "line-through");  		
+		$(".head").show(1000);  		
   		}
   	if (incorrect == 2){
-		$(".body").css("text-decoration", "line-through");  		
-  		}
+		$(".leftarm").show(1000);
+		}
   	if (incorrect == 3){
-		$(".leftarm").css("text-decoration", "line-through");  		
-  		}
+		$(".body1").show(1000);  		
+  		}  		
   	if (incorrect == 4){
-		$(".rightarm").css("text-decoration", "line-through");
+		$(".rightarm").show(1000);
 		}
 	if (incorrect == 5){
-		$(".leftleg").css("text-decoration", "line-through");
-		}  		
+		$(".body2").show(1000);
+		}	
 	if (incorrect == 6){
-		$(".rightleg").css("text-decoration", "line-through");
+		$(".leftleg").show(1000);
 		}  		
-  	if (incorrect > 6){
+	if (incorrect == 7){
+		$(".rightleg").show(1000);
+		}  		
+  	if (incorrect > 7){
   		alert("you lose!");
   		}			
 
