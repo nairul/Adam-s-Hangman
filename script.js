@@ -1,39 +1,55 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 var correctGuessMade = false;
 var incorrect = 0;
-/*var hangman = {
-head: 0,
-body: 0,
-leftarm: 0,
-rightarm: 0
-};*/
-//$(".alphabet").html(alphabet);
+var p1inputEl = $("#p1 .input");
+var p2inputEl = $("#p2 .input");
+var gameNum = 0;
+
+$("#p1 .button").on("click", function(){
+	$(".fill").html("");
+		var p1input = p1inputEl.val();
+		for (var i = 1; i <= p1input.length; i++){ 
+			$(".fill").append("<div class='blank'></div> ");
+		}
+	gameNum++;
+	
+});
 
 $("#p2 .button").on("click", function(){
+var p1input = p1inputEl.val();
+var p2input = p2inputEl.val();
 
-var p1input = $("#p1 .input").val();
-var p2input = $("#p2 .input").val();
+//HOW DO I refresh # of blanks when button is pressed??
+
 //Add Blanks equal to string length of p1input
-	for (var i = 1; i <= p1input.length; i++){
-		$(".fill").append("<div class='blank'></div> ");
-	}	
+	
+
 //Fill Blanks With Correct Guess, and keep correctGuessMade = true
-	if 	(p1input[0] == p2input){  
-  		$(".fill #blank0").html(p2input);
+	/*if 	(p1input[0] == p2input){  
+  		$(".fill .blank:first").html(p2input);
   		correctGuessMade = true;
   	}
   	if 	(p1input[1] == p2input){  
-  		$(".fill #blank1").html(p2input);
+  		$(".fill .blank:nth-child(2)").html(p2input);
   		correctGuessMade = true;
   	}
   	if 	(p1input[2] == p2input){  
-  		$(".fill #blank2").html(p2input);
+  		$(".fill .blank:nth-child(3)").html(p2input);
   		correctGuessMade = true;
   	}
   	if 	(p1input[3] == p2input){  
-  		$(".fill #blank3").html(p2input);
+  		$(".fill .blank:nth-child(4)").html(p2input);
   		correctGuessMade = true;
   	}
+*/
+  	for (var i = 0; i < p1input.length; i++){
+  		if 	(p1input[i] == p2input){  
+  		$(".fill .blank").eq(i).html(p2input);
+  		correctGuessMade = true;
+  		}
+  	}
+
+
   	//WHY DID THIS NEED TO BE "==" ?
   	if 	(correctGuessMade == false){
   		incorrect += 1;
