@@ -37,5 +37,5 @@ Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 
 
 !![SMALL STEPS]!!
 
-Make a button to strikethrough a letter when same letter is inputted
+strikethrough a body part each time an incorrect guess has been made
 

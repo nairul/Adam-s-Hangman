@@ -1,5 +1,12 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 var correctGuessMade = false;
+var incorrect = 0;
+/*var hangman = {
+head: 0,
+body: 0,
+leftarm: 0,
+rightarm: 0
+};*/
 //$(".alphabet").html(alphabet);
 
 $("#p2 .button").on("click", function(){
@@ -7,35 +14,44 @@ $("#p2 .button").on("click", function(){
 var p1input = $("#p1 .input").val();
 var p2input = $("#p2 .input").val();	
 //Nayana recommends use nested if/else statements here...
-	if (p1input[0] == p2input){  
+	if 	(p1input[0] == p2input){  
   		$(".fill #blank0").html(p2input);
   		correctGuessMade = true;
   	}
 
-  	if (p1input[1] == p2input){  
+  	if 	(p1input[1] == p2input){  
   		$(".fill #blank1").html(p2input);
   		correctGuessMade = true;
   	}
 
-  	if (p1input[2] == p2input){  
+  	if 	(p1input[2] == p2input){  
   		$(".fill #blank2").html(p2input);
   		correctGuessMade = true;
   	}
 
-  	if (p1input[3] == p2input){  
+  	if 	(p1input[3] == p2input){  
   		$(".fill #blank3").html(p2input);
   		correctGuessMade = true;
   	}
   	//WHY DID THIS NEED TO BE "==" ?
-  	if (correctGuessMade == false){
-  		console.log("false!");
-  		$(".head").css("text-decoration", "line-through");		
-  		
-  	}
- 
-  //HERE'S THE javascript TO START HANGING THE MAN ONCE YOU FIGURE OUT WHERE TO PUT IT!	
- //$(".pole .head").css("text-decoration," "line-through");
-  					
+  	if 	(correctGuessMade == false){
+  		incorrect += 1;
+  		}
+  	if (incorrect == 1){
+		$(".head").css("text-decoration", "line-through");  		
+  		}
+  	if (incorrect == 2){
+		$(".body").css("text-decoration", "line-through");  		
+  		}
+  	if (incorrect == 3){
+		$(".leftarm").css("text-decoration", "line-through");  		
+  		}
+  	if (incorrect == 4){
+		$(".rightarm").css("text-decoration", "line-through");  		
+  		}
+  	if (incorrect > 4){
+  		alert("you lose!");
+  		}			
 
 //alphabet strikethroughs (TO REFACTOR USE A LOOP)
   	if (alphabet[0] == p2input){
