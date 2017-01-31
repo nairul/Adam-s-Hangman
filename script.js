@@ -12,23 +12,24 @@ rightarm: 0
 $("#p2 .button").on("click", function(){
 
 var p1input = $("#p1 .input").val();
-var p2input = $("#p2 .input").val();	
-//Nayana recommends use nested if/else statements here...
+var p2input = $("#p2 .input").val();
+//Add Blanks equal to string length of p1input
+	for (var i = 1; i <= p1input.length; i++){
+		$(".fill").append("<div class='blank'></div> ");
+	}	
+//Fill Blanks With Correct Guess, and keep correctGuessMade = true
 	if 	(p1input[0] == p2input){  
   		$(".fill #blank0").html(p2input);
   		correctGuessMade = true;
   	}
-
   	if 	(p1input[1] == p2input){  
   		$(".fill #blank1").html(p2input);
   		correctGuessMade = true;
   	}
-
   	if 	(p1input[2] == p2input){  
   		$(".fill #blank2").html(p2input);
   		correctGuessMade = true;
   	}
-
   	if 	(p1input[3] == p2input){  
   		$(".fill #blank3").html(p2input);
   		correctGuessMade = true;
@@ -37,6 +38,7 @@ var p2input = $("#p2 .input").val();
   	if 	(correctGuessMade == false){
   		incorrect += 1;
   		}
+  	//Add Body Parts Based on value of incorrect guesses
   	if (incorrect == 1){
 		$(".head").css("text-decoration", "line-through");  		
   		}
@@ -47,9 +49,15 @@ var p2input = $("#p2 .input").val();
 		$(".leftarm").css("text-decoration", "line-through");  		
   		}
   	if (incorrect == 4){
-		$(".rightarm").css("text-decoration", "line-through");  		
-  		}
-  	if (incorrect > 4){
+		$(".rightarm").css("text-decoration", "line-through");
+		}
+	if (incorrect == 5){
+		$(".leftleg").css("text-decoration", "line-through");
+		}  		
+	if (incorrect == 6){
+		$(".rightleg").css("text-decoration", "line-through");
+		}  		
+  	if (incorrect > 6){
   		alert("you lose!");
   		}			
 

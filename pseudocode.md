@@ -18,24 +18,12 @@ Track scores across games (even if the page is reloaded)
 ~~PSEUDOCODE~~
 
 !![HTML]!!
-For blank spaces, use the underlines as div borders with text centered above them
-
 
 !![CSS]!!
 
 Center everything and learn flexbox again.
 
-!![Javascript]!!
+!![SMALL STEPS JS]!!
 
-Take P2 Guess and check if guess == any letters parsed from P1 Word
-
-Start as pole and ending as hangman after (Button Press?) each error: (1) Head, 2) Body, 3) Left Arm, 4) Right Arm, 5) Left Leg, 6) Right Leg)
-
-<strike> each letter in alphabet after it has been guessed
-
-
-
-!![SMALL STEPS]!!
-
-strikethrough a body part each time an incorrect guess has been made
+Add blanks equal to the length of the string entered by P1
 
