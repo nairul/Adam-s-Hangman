@@ -21,7 +21,7 @@ $("#p1 .button").on("click", function(){
 	$(".fill").html("");
 	var p1input = p1inputEl.val().toUpperCase();
 	//Refresh array
-	array = ["x"];
+	array = [];
 	//Refresh Win Condition
 	correct = 0;
 	//Refresh Pole
@@ -34,7 +34,7 @@ $("#p1 .button").on("click", function(){
 	$(".leftleg").css("display", "none");
 	$(".rightleg").css("display", "none");
 	//Refresh wrong letters
-	$(".alphabet").hide();
+	$(".alphabet").html("");
 	//Refresh P2 input
 	p2inputEl.val("");
 
@@ -72,10 +72,17 @@ var p2input = p2inputEl.val().toUpperCase();
   		//console.log(wrongLetters);
   		*/
   	if (array.includes(p2input)){
-  		console.log("already guessed!")
-  	}
-  	array.push(p2input);
-  	console.log(array); 	
+  		alert("You already guessed this letter! A new body part has been added")
+  	}	
+  		else {
+  			array.push(p2input);
+  			$(".alphabet").show();
+  			$(".alphabet").html(array); 	
+  			$(".alphabet").css("text-decoration", "line-through");
+  			$(".alphabet").css("letter-spacing", "8px");
+  		}
+  	console.log(array);
+  	
   	//add body parts one by one	
   	if (incorrect == 1){
 		$(".head").show(1000);
@@ -104,6 +111,7 @@ var p2input = p2inputEl.val().toUpperCase();
 	if (incorrect == 7){
 		$(".rightleg").show(1000);
 		$(".rightleg").css("display", "inline");
+		alert("One more incorrect guess and the man hangs!")
 		}  		
   	if (incorrect > 7){
   		alert("you lose!");
@@ -111,12 +119,15 @@ var p2input = p2inputEl.val().toUpperCase();
 
 
 
-	//alphabet strikethroughs OLD (TO REFACTOR USE A LOOP)
-	$(".alphabet").show();
+	//alphabet strikethroughs OLD (TO REFACTOR USE A LOOP. BUT HOW?)
+	/*$(".alphabet").show();
   	if (alphabet[0] == p2input){
   		$(".a").css("display", "inline");
 		$(".a").css("text-decoration", "line-through");
 	}
+		else if (alphabet[0] !== p2input){
+			$(".a").css("display", "none");
+		}
 	if (alphabet[1] == p2input){
 		$(".b").css("display", "inline");
 		$(".b").css("text-decoration", "line-through");
@@ -217,6 +228,7 @@ var p2input = p2inputEl.val().toUpperCase();
 		$(".z").css("display", "inline");
 		$(".z").css("text-decoration", "line-through");
 	}
+	*/
 }
 	correctGuessMade = false;
 });
