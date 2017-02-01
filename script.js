@@ -1,10 +1,12 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 var correctGuessMade = false;
 var incorrect = 0;
+var correct = 0;
 var p1inputEl = $("#p1 .input");
 var p2inputEl = $("#p2 .input");
 var wrongLettersEl = $(".wrong_letters");
 var gameNum = 0;
+var array = [];
 /*
 $(".head").hide();
 $(".leftarm").hide();
@@ -18,6 +20,10 @@ $("#p1 .button").on("click", function(){
 	//Refresh Blanks on p1 button click
 	$(".fill").html("");
 	var p1input = p1inputEl.val().toUpperCase();
+	//Refresh array
+	array = ["x"];
+	//Refresh Win Condition
+	correct = 0;
 	//Refresh Pole
 	incorrect = 0;
 	$(".head").css("display", "none");
@@ -47,8 +53,13 @@ var p2input = p2inputEl.val().toUpperCase();
   		if 	(p1input[i] == p2input){  
   		$(".fill .blank").eq(i).html(p2input);
   		correctGuessMade = true;
+  		correct++;
   		}
   	}
+  	if (correct == p1input.length){
+  		alert("you win!")
+  	}
+
   	//When incorrect guess is made
   	if 	(correctGuessMade == false){
   		incorrect++;
@@ -60,8 +71,11 @@ var p2input = p2inputEl.val().toUpperCase();
   		wrongLettersEl.css("letter-spacing", "3px");
   		//console.log(wrongLetters);
   		*/
-  	array = []
-  	array.push("p2input"); 	
+  	if (array.includes(p2input)){
+  		console.log("already guessed!")
+  	}
+  	array.push(p2input);
+  	console.log(array); 	
   	//add body parts one by one	
   	if (incorrect == 1){
 		$(".head").show(1000);
