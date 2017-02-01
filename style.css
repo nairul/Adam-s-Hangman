@@ -1,7 +1,19 @@
+body {
+	background: rgba(76, 120, 80, 0.3);
+}
+
+h1 {
+	text-align: center;
+}
+
 .container {
 	font-family: 'Ruluko', sans-serif;
  	margin: 0px auto;
  	width: 700px;
+ 	padding: 20px;
+ 	border: 1px solid rgba(76, 175, 80, 0.5); 
+    background: rgba(76, 175, 80, 0.3)
+
 }
 
 .alphabet{
@@ -14,6 +26,7 @@
 
 .pole {
 	width: 100px;
+	margin: 0 auto;
 }
 
 .blank {
@@ -27,6 +40,9 @@
 
 .player {
 	display: inline-block;
+	padding: 10px;
+	background: rgba(50,50,200,0.3);
+	border: 1px solid rgba(50,50,200,0.5);
 }
 
 .head, .leftarm, .body1, .rightarm, .body2, .leftleg, .rightleg{
@@ -35,10 +51,14 @@
 
 .wrapper {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .fill {
+	margin: 0 auto;
+	width: 400px;
+	display: flex;
+	justify-content: space-around;
 }
 
 /*.input {
