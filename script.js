@@ -7,6 +7,9 @@ var p2inputEl = $("#p2 .input");
 var wrongLettersEl = $(".wrong_letters");
 var gameNum = 0;
 var array = [];
+
+// ND: Don't leave code you're not using in the app on your master branch. Instead, use feature branches where it's OK for
+// stuff to be in non-working condition.
 /*
 $(".head").hide();
 $(".leftarm").hide();
@@ -16,7 +19,11 @@ $(".body2").hide();
 $(".leftleg").hide();
 $(".rightleg").hide();
 */
+
+// ND: Maybe add a submit event too, so that 
 $("#p1 .button").on("click", function(){
+	// ND: Nice job commenting your code.
+
 	//Refresh Blanks on p1 button click
 	$(".fill").html("");
 	var p1input = p1inputEl.val().toUpperCase();
@@ -26,6 +33,7 @@ $("#p1 .button").on("click", function(){
 	correct = 0;
 	//Refresh Pole
 	incorrect = 0;
+	// ND: Here, I'd look into changing classes instead of using css();
 	$(".head").css("display", "none");
 	$(".leftarm").css("display", "none");
 	$(".body1").css("display", "none");
@@ -39,7 +47,7 @@ $("#p1 .button").on("click", function(){
 	p2inputEl.val("");
 
 	//Add Blanks equal to string length of p1input
-	for (var i = 1; i <= p1input.length; i++){ 
+	for (var i = 1; i <= p1input.length; i++){
 		$(".fill").append("<div class='blank'></div> ");
 	}
 	gameNum++;
@@ -50,7 +58,7 @@ var p1input = p1inputEl.val().toUpperCase();
 var p2input = p2inputEl.val().toUpperCase();
 //Fill Blanks With Correct Guess, and keep correctGuessMade = true
   	for (var i = 0; i < p1input.length; i++){
-  		if 	(p1input[i] == p2input){  
+  		if 	(p1input[i] == p2input){
   		$(".fill .blank").eq(i).html(p2input);
   		correctGuessMade = true;
   		correct++;
@@ -64,7 +72,7 @@ var p2input = p2inputEl.val().toUpperCase();
   	if 	(correctGuessMade == false){
   		incorrect++;
   		/*alphabet strikethroughs NEW
-  		//make p2input into an array 
+  		//make p2input into an array
   		//if inputted letter does not match any letters in wrongLettersEl do this code:
   		wrongLettersEl.append(p2input);
   		wrongLettersEl.css("text-decoration", "line-through");
@@ -73,20 +81,22 @@ var p2input = p2inputEl.val().toUpperCase();
   		*/
   	if (array.includes(p2input)){
   		alert("You already guessed this letter! A new body part has been added")
-  	}	
+  	}
   		else {
   			array.push(p2input);
+		// ND: Look into method chaining to condense this. Also, if you used classes, you wouldn't have to use .css() twice
   			$(".alphabet").show();
-  			$(".alphabet").html(array); 	
+  			$(".alphabet").html(array);
   			$(".alphabet").css("text-decoration", "line-through");
   			$(".alphabet").css("letter-spacing", "8px");
   		}
   	console.log(array);
-  	
-  	//add body parts one by one	
+
+  	//add body parts one by one
+		// ND: Maybe could have used the loop to condense this code, contained the images in an array
   	if (incorrect == 1){
 		$(".head").show(1000);
-		$(".head").css("display", "inline");  		
+		$(".head").css("display", "inline");
   		}
   	if (incorrect == 2){
 		$(".leftarm").show(1000);
@@ -94,8 +104,8 @@ var p2input = p2inputEl.val().toUpperCase();
 		}
   	if (incorrect == 3){
 		$(".body1").show(1000);
-		$(".body1").css("display", "inline");  		
-  		}  		
+		$(".body1").css("display", "inline");
+  		}
   	if (incorrect == 4){
 		$(".rightarm").show(1000);
 		$(".rightarm").css("display", "inline");
@@ -103,16 +113,16 @@ var p2input = p2inputEl.val().toUpperCase();
 	if (incorrect == 5){
 		$(".body2").show(1000);
 		$(".body2").css("display", "inline");
-		}	
+		}
 	if (incorrect == 6){
 		$(".leftleg").show(1000);
 		$(".leftleg").css("display", "inline");
-		}  		
+		}
 	if (incorrect == 7){
 		$(".rightleg").show(1000);
 		$(".rightleg").css("display", "inline");
 		alert("One more incorrect guess and the man hangs!")
-		}  		
+		}
   	if (incorrect > 7){
   		alert("you lose!");
   		}
@@ -120,6 +130,7 @@ var p2input = p2inputEl.val().toUpperCase();
 
 
 	//alphabet strikethroughs OLD (TO REFACTOR USE A LOOP. BUT HOW?)
+	// ND: Try using .match()
 	/*$(".alphabet").show();
   	if (alphabet[0] == p2input){
   		$(".a").css("display", "inline");
