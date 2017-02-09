@@ -11,7 +11,7 @@ h1 {
  	margin: 0px auto;
  	width: 700px;
  	padding: 20px;
- 	border: 1px solid rgba(76, 175, 80, 0.5); 
+ 	border: 1px solid rgba(76, 175, 80, 0.5);
     background: rgba(76, 175, 80, 0.3)
 
 }
@@ -20,6 +20,7 @@ h1 {
 	display: inline-block;
 }
 
+/*ND: Give all these one class*/
 .a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k, .l, .m, .n, .o, .p, .q, .r, .s, .t, .u, .v, .w, .x, .y, .z{
 	display: none;
 }
@@ -45,6 +46,7 @@ h1 {
 	border: 1px solid rgba(50,50,200,0.5);
 }
 
+/*ND: again, one class*/
 .head, .leftarm, .body1, .rightarm, .body2, .leftleg, .rightleg{
 	display: none;
 }
@@ -61,6 +63,7 @@ h1 {
 	justify-content: space-around;
 }
 
+/*ND: Don't leave dead code in master branch*/
 /*.input {
 	text-transform:uppercase;
 }
